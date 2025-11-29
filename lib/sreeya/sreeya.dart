@@ -19,13 +19,29 @@ class Sreeya extends StatelessWidget {
           ),
         ),
         actions: [
-          FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          GestureDetector(
+              onTap: () {
+
+              },
+              child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white)),
           SizedBox(width: 20),
-          FaIcon(FontAwesomeIcons.download, color: Colors.white),
+          GestureDetector(
+              onTap: () {
+
+              },
+              child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
           SizedBox(width: 20),
-          Icon(Icons.search, color: Colors.white, size: 25),
+          GestureDetector(
+              onTap: () {
+
+              },
+              child: Icon(Icons.search, color: Colors.white, size: 25)),
           SizedBox(width: 20),
-          FaIcon(FontAwesomeIcons.bell, color: Colors.white),
+          GestureDetector(
+              onTap: () {
+
+              },
+              child: FaIcon(FontAwesomeIcons.bell, color: Colors.white)),
           SizedBox(width: 20),
         ],
       ),
@@ -105,7 +121,7 @@ class Sreeya extends StatelessWidget {
                 border: Border.all(color: Colors.white30),
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
-                  image: AssetImage("assets/stranger.jpg"),
+                  image: AssetImage("assets/sss.jpg"),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -120,7 +136,7 @@ class Sreeya extends StatelessWidget {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 30, top: 10),
+                        padding: const EdgeInsets.only(left: 30, top: 30),
                         child: Container(
                           height: 50,
                           width: 150,
@@ -150,7 +166,7 @@ class Sreeya extends StatelessWidget {
                       ),
                       SizedBox(width: 50),
                       Padding(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 30),
                         child: Container(
                           height: 50,
                           width: 150,
@@ -291,7 +307,7 @@ class Sreeya extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.only(right: 300),
+              padding: const EdgeInsets.only(right: 310),
               child: Text(
                 "Action Movies",
                 style: TextStyle(
@@ -394,6 +410,342 @@ class Sreeya extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5),
                         image: DecorationImage(
                           image: AssetImage("assets/K.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(right: 370),
+              child: Text(
+                "Top 10",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c1.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/stranger.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/t1.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/t2.webp"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/M.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/t3.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/t4.webp"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(right: 370),
+              child: Text(
+                "Horror",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/m1.jpeg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/h1.jpeg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/h2.webp"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/h3.png"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/t5.webp"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/h4.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/h5.png"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(right: 300),
+              child: Text(
+                "Comedy movies",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c2.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c3.jpeg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c4.jpeg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c5.jpeg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c6.jpeg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c7.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      height: 180,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage("assets/c8.jpeg"),
                           fit: BoxFit.fill,
                         ),
                       ),

@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:netflix/adhi.dart';
-import 'package:netflix/smy.dart';
-import 'package:netflix/sreeya.dart';
-import 'package:netflix/new.dart';
+import 'package:netflix/kid/kid.dart';
+import 'package:netflix/kid/kmy.dart';
+import 'package:netflix/kid/knew.dart';
 
-class Netflix extends StatefulWidget {
-  const Netflix({super.key});
+
+
+class KNetflix extends StatefulWidget {
+  const KNetflix({super.key});
 
   @override
-  State<Netflix> createState() => _NetflixState();
+  State<KNetflix> createState() => _NetflixState();
 }
 
 int index = 0;
-List<Widget> screens = [Sreeya(),New(),Smy()];
+List<Widget> screens1 = [Kids(),KNew(),Kmy()];
 
-class _NetflixState extends State<Netflix> {
+class _NetflixState extends State<KNetflix> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: screens[index],
+    return Scaffold(body: screens1[index],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
           setState(() {

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
-import 'package:netflix/adhi.dart';
-import 'package:netflix/netflix.dart';
-import 'package:netflix/sreeya.dart';
+import 'package:netflix/adhi/adhi.dart';
+import 'package:netflix/adhi/anetflix.dart';
+import 'package:netflix/kid/kid.dart';
+import 'package:netflix/kid/knetflix.dart';
+import 'package:netflix/sreeya/snetflix.dart';
+import 'package:netflix/sreeya/sreeya.dart';
+
 
 class NetflixProfile extends StatefulWidget {
   const NetflixProfile({super.key});
@@ -19,23 +23,21 @@ class _NetflixProfileState extends State<NetflixProfile> {
         color: Colors.black,
         child: Stack(
           children: [
-            // 1) Background Image
             Center(
               child: Column(
                 children: [Image(image: AssetImage("assets/NE.jpg"))],
               ),
             ),
 
-            // 2) Choose Profile Text
-            Padding(
-              padding: const EdgeInsets.only(top: 600, left: 150),
+            Positioned(
+              top: 600,
+              left: 150,
               child: Text(
                 "Choose your profile",
                 style: TextStyle(color: Colors.grey),
               ),
             ),
 
-            // 3) First row of profiles
             Positioned(
               top: 650,
               left: 30,
@@ -43,9 +45,9 @@ class _NetflixProfileState extends State<NetflixProfile> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => Netflix()),
+                        MaterialPageRoute(builder: (context) => SNetflix()),
                       );
                     },
                     child: Container(
@@ -65,9 +67,9 @@ class _NetflixProfileState extends State<NetflixProfile> {
 
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => Netflix()),
+                        MaterialPageRoute(builder: (context) => ANetflix()),
                       );
                     },
                     child: Container(
@@ -85,55 +87,46 @@ class _NetflixProfileState extends State<NetflixProfile> {
 
                   SizedBox(width: 40),
 
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: AssetImage("assets/sai.png"),
-                        fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => KNetflix()),
+                      );
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage("assets/kid.avif"),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-
-            // 4) Second row of profiles (FIXED)
+            Positioned(
+              top: 755,
+              child: Row(
+                children: [
+                  SizedBox(width: 60),
+                  Text("sreeya", style: TextStyle(color: Colors.white)),
+                  SizedBox(width: 100),
+                  Text("Adhi", style: TextStyle(color: Colors.white)),
+                  SizedBox(width: 110),
+                  Text("Kids", style: TextStyle(color: Colors.white)),
+                ],
+              ),
+            ),
             Positioned(
               top: 800,
               left: 30,
               child: Row(
                 children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: AssetImage("assets/sasi.png"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-
-                  SizedBox(width: 40),
-
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: AssetImage("assets/abhi.png"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-
-                  SizedBox(width: 40),
-
                   Container(
                     height: 100,
                     width: 100,
@@ -150,6 +143,13 @@ class _NetflixProfileState extends State<NetflixProfile> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Positioned(
+              top: 905,
+              left: 65,
+              child: Row(
+                children: [Text("Edit", style: TextStyle(color: Colors.white))],
               ),
             ),
           ],

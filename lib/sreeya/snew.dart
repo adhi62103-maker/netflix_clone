@@ -1,0 +1,405 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class SNew extends StatelessWidget {
+  const SNew({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text(
+          "For Sreeya",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
+        actions: [
+          FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          SizedBox(width: 20),
+          FaIcon(FontAwesomeIcons.download, color: Colors.white),
+          SizedBox(width: 20),
+          Icon(Icons.search, color: Colors.white, size: 25),
+          SizedBox(width: 20),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 10, left: 10),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      height: 30,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white30),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text(
+                          " 🍿 Coming Soon",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Container(
+                      height: 30,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white30),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "🔥 Everyone's Watching",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Container(
+                      height: 30,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white30),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "🔝 Top 10 Shows",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Container(
+                      height: 30,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white30),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "🔝 Top 10 Movies",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 250,
+              width: 400,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white70),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                image: DecorationImage(
+                  image: AssetImage("assets/Z.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            Container(
+              height: 280,
+              width: 400,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white70),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+                color: Colors.white10,
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 20,
+                      left: 15,
+                      bottom: 20,
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          "MONEY",
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          "HEIST",
+                          style: GoogleFonts.poppins(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Text(
+                      "Money Heist is a powerful and fast-paced Spanish "
+                      "crime series where a group of skilled robbers, "
+                      "guided by the brilliant and calm Professor, plan "
+                      "nearly impossible heists while dealing with deep emotions, loyalty, "
+                      "betrayal, and nonstop suspense that keeps you hooked from start to finish",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 220, top: 10),
+                    child: Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.bell, color: Colors.black),
+                            SizedBox(width: 15),
+                            Text(
+                              "Remind Me",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            SizedBox(height: 20),
+            Container(
+              height: 250,
+              width: 400,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white70),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                image: DecorationImage(
+                  image: AssetImage("assets/dd.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            Container(
+              height: 280,
+              width: 400,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white70),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+                color: Colors.white10,
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20, bottom: 20),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "ALL OF US",
+                              style: GoogleFonts.rubikWetPaint(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30,
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              "         ARE DEAD",
+                              style: GoogleFonts.rubikWetPaint(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Text(
+                      "A high school becomes ground zero for a zombie virus out break. Trapped students must fight their way out-or turn into one of the rabid infected",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),SizedBox(height: 10,),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 220, top: 10),
+                    child: Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.bell, color: Colors.black),
+                            SizedBox(width: 15),
+                            Text(
+                              "Remind Me",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ), SizedBox(height: 10),
+            SizedBox(height: 20),
+            Container(
+              height: 250,
+              width: 400,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white70),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                image: DecorationImage(
+                  image: AssetImage("assets/alice.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            Container(
+              height: 280,
+              width: 400,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white70),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+                color: Colors.white10,
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20, bottom: 20),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 200),
+                              child: Text(
+                                "   ALICE ",
+                                style: GoogleFonts.agdasima(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 30,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              "IN BORDERLAND",
+                              style: GoogleFonts.agdasima(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Text(
+                      "A slacker competes in high-stakes games of life and death in this top-streamed title Salon describes as the dystopian ride we've been waiting for",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),SizedBox(height: 10,),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 220, top: 10),
+                    child: Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.bell, color: Colors.black),
+                            SizedBox(width: 15),
+                            Text(
+                              "Remind Me",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
