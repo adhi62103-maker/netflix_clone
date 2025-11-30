@@ -20,28 +20,71 @@ class Sreeya extends StatelessWidget {
         ),
         actions: [
           GestureDetector(
-              onTap: () {
-
-              },
-              child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white)),
+            onTap: () {
+              showBottomSheet(
+                context: context,
+                backgroundColor: Colors.black,
+                builder: (context) {
+                  return Container(
+                    height: 550,
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        SizedBox(height: 20),
+                        Image(image: AssetImage("assets/comp.png")),
+                        Text(
+                          "No Devices Found",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
+                          style: TextStyle(color: Colors.grey),
+                        ),SizedBox(height: 20,),SizedBox(
+                          height: 45,
+                          width: 250,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadiusGeometry.circular(10),
+                              ),
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                            ),
+                            child: Text(
+                              "Find Something to Watch",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+            child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
+            onTap: () {},
+            child: FaIcon(FontAwesomeIcons.download, color: Colors.white),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: Icon(Icons.search, color: Colors.white, size: 25)),
+            onTap: () {},
+            child: Icon(Icons.search, color: Colors.white, size: 25),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: FaIcon(FontAwesomeIcons.bell, color: Colors.white)),
+            onTap: () {},
+            child: FaIcon(FontAwesomeIcons.bell, color: Colors.white),
+          ),
           SizedBox(width: 20),
         ],
       ),
@@ -417,7 +460,8 @@ class Sreeya extends StatelessWidget {
                   ],
                 ),
               ),
-            ),SizedBox(height: 10),
+            ),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(right: 370),
               child: Text(
@@ -529,7 +573,8 @@ class Sreeya extends StatelessWidget {
                   ],
                 ),
               ),
-            ),SizedBox(height: 10),
+            ),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(right: 370),
               child: Text(
@@ -641,7 +686,8 @@ class Sreeya extends StatelessWidget {
                   ],
                 ),
               ),
-            ),SizedBox(height: 10),
+            ),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(right: 300),
               child: Text(

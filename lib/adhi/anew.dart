@@ -20,11 +20,68 @@ class ANew extends StatelessWidget {
           ),
         ),
         actions: [
-          FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          GestureDetector(
+              onTap: () {
+                showBottomSheet(
+                  context: context,
+                  backgroundColor: Colors.black,
+                  builder: (context) {
+                    return Container(
+                      height: 550,
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          SizedBox(height: 20),
+                          Image(image: AssetImage("assets/comp.png")),
+                          Text(
+                            "No Devices Found",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30,
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
+                            style: TextStyle(color: Colors.grey),
+                          ),SizedBox(height: 20,),SizedBox(
+                            height: 45,
+                            width: 250,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(10),
+                                ),
+                                backgroundColor: Colors.white,
+                                foregroundColor: Colors.black,
+                              ),
+                              child: Text(
+                                "Find Something to Watch",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+              child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white)),
           SizedBox(width: 20),
-          FaIcon(FontAwesomeIcons.download, color: Colors.white),
+          GestureDetector(
+              onTap: () {
+
+              },
+              child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
           SizedBox(width: 20),
-          Icon(Icons.search, color: Colors.white, size: 25),
+          GestureDetector(
+              onTap: () {
+
+              },
+              child: Icon(Icons.search, color: Colors.white, size: 25)),
           SizedBox(width: 20),
         ],
       ),
