@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/downloads.dart';
+import 'package:netflix/search.dart';
 
 class ANew extends StatelessWidget {
   const ANew({super.key});
@@ -21,67 +23,86 @@ class ANew extends StatelessWidget {
         ),
         actions: [
           GestureDetector(
-              onTap: () {
-                showBottomSheet(
-                  context: context,
-                  backgroundColor: Colors.black,
-                  builder: (context) {
-                    return Container(
-                      height: 550,
-                      width: double.infinity,
-                      child: Column(
-                        children: [
-                          SizedBox(height: 20),
-                          Image(image: AssetImage("assets/comp.png")),
-                          Text(
-                            "No Devices Found",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                backgroundColor: Colors.black,
+                builder: (context) {
+                  return Container(
+                    height: 550,
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        SizedBox(height: 20),
+                        Icon(
+                          Icons.cast_connected,
+                          color: Colors.white,
+                          size: 100,
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "No Devices Found",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
+                          style: TextStyle(color: Colors.grey),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
+                          height: 45,
+                          width: 250,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                            ),
+                            child: Text(
+                              "Find Something to Watch",
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
-                          SizedBox(height: 20),
-                          Text(
-                            "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
-                            style: TextStyle(color: Colors.grey),
-                          ),SizedBox(height: 20,),SizedBox(
-                            height: 45,
-                            width: 250,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadiusGeometry.circular(10),
-                                ),
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                              ),
-                              child: Text(
-                                "Find Something to Watch",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              },
-              child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white)),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+            child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Downloads()),
+              );
+            },
+            child: FaIcon(FontAwesomeIcons.download, color: Colors.white),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: Icon(Icons.search, color: Colors.white, size: 25)),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Search()),
+              );
+            },
+            child: Icon(Icons.search, color: Colors.white, size: 25),
+          ),
           SizedBox(width: 20),
         ],
       ),
@@ -103,10 +124,7 @@ class ANew extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
-                        child: Text(
-                          " 🍿 Coming Soon",
-                          style: TextStyle(color: Colors.grey),
-                        ),
+                        child: Text(" 🍿 Coming Soon", style: TextStyle(color: Colors.grey)),
                       ),
                     ),
                     SizedBox(width: 20),
@@ -119,10 +137,7 @@ class ANew extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
-                        child: Text(
-                          "🔥 Everyone's Watching",
-                          style: TextStyle(color: Colors.grey),
-                        ),
+                        child: Text("🔥 Everyone's Watching", style: TextStyle(color: Colors.grey)),
                       ),
                     ),
                     SizedBox(width: 20),
@@ -135,10 +150,7 @@ class ANew extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
-                        child: Text(
-                          "🔝 Top 10 Shows",
-                          style: TextStyle(color: Colors.grey),
-                        ),
+                        child: Text("🔝 Top 10 Shows", style: TextStyle(color: Colors.grey)),
                       ),
                     ),
                     SizedBox(width: 20),
@@ -151,10 +163,7 @@ class ANew extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
-                        child: Text(
-                          "🔝 Top 10 Movies",
-                          style: TextStyle(color: Colors.grey),
-                        ),
+                        child: Text("🔝 Top 10 Movies", style: TextStyle(color: Colors.grey)),
                       ),
                     ),
                   ],
@@ -162,6 +171,7 @@ class ANew extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
+
             Container(
               height: 250,
               width: 400,
@@ -178,7 +188,6 @@ class ANew extends StatelessWidget {
               ),
             ),
             Container(
-              height: 290,
               width: 400,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white70),
@@ -208,12 +217,12 @@ class ANew extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Text(
-                      "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids. The mystery-drama series introduces an intricate puzzle filled with twists that includes a web of curiou...",
+                      "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids. The mystery-drama series introduces an intricate ",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 220, top: 10),
+                    padding: const EdgeInsets.only(right: 220, top: 30, bottom: 20),
                     child: Container(
                       height: 50,
                       width: 150,
@@ -245,6 +254,7 @@ class ANew extends StatelessWidget {
             ),
             SizedBox(height: 10),
             SizedBox(height: 20),
+
             Container(
               height: 250,
               width: 400,
@@ -261,7 +271,6 @@ class ANew extends StatelessWidget {
               ),
             ),
             Container(
-              height: 280,
               width: 400,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white70),
@@ -278,6 +287,7 @@ class ANew extends StatelessWidget {
                     child: Row(
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "ALL OF US",
@@ -287,7 +297,7 @@ class ANew extends StatelessWidget {
                                 fontSize: 30,
                               ),
                             ),
-                            SizedBox(width: 5),
+                            SizedBox(height: 5),
                             Text(
                               "         ARE DEAD",
                               style: GoogleFonts.rubikWetPaint(
@@ -310,7 +320,7 @@ class ANew extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.only(right: 220, top: 10),
+                    padding: const EdgeInsets.only(right: 220, top: 10, bottom: 20),
                     child: Container(
                       height: 50,
                       width: 150,
@@ -342,6 +352,7 @@ class ANew extends StatelessWidget {
             ),
             SizedBox(height: 10),
             SizedBox(height: 20),
+
             Container(
               height: 250,
               width: 400,
@@ -358,7 +369,6 @@ class ANew extends StatelessWidget {
               ),
             ),
             Container(
-              height: 280,
               width: 400,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white70),
@@ -375,6 +385,7 @@ class ANew extends StatelessWidget {
                     child: Row(
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(right: 200),
@@ -387,7 +398,7 @@ class ANew extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 5),
+                            SizedBox(height: 5),
                             Text(
                               "IN BORDERLAND",
                               style: GoogleFonts.agdasima(
@@ -410,7 +421,7 @@ class ANew extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.only(right: 220, top: 10),
+                    padding: const EdgeInsets.only(right: 220, top: 10, bottom: 20),
                     child: Container(
                       height: 50,
                       width: 150,
@@ -440,6 +451,7 @@ class ANew extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),

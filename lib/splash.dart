@@ -13,6 +13,9 @@ class Splash extends StatelessWidget {
         MaterialPageRoute(builder: (context) => NetflixProfile()),
       );
     });
-    return Scaffold(body: Center(child: Lottie.asset("assets/lottie.json")));
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(child: Lottie.asset("assets/splash.json")),
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/adhi/adhi.dart';
 import 'package:netflix/kid/knetflix.dart';
+import 'package:netflix/search.dart';
 import 'package:netflix/sreeya/snetflix.dart';
 import 'package:netflix/sreeya/smy.dart';
 import 'package:netflix/sreeya/sreeya.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Splash());
+        debugShowCheckedModeBanner: false,
+        home: Splash());
   }
 }

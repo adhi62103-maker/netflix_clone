@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:netflix/downloads.dart';
+import 'package:netflix/notification.dart';
+import 'package:netflix/search.dart';
 
 class Kids extends StatelessWidget {
   const Kids({super.key});
@@ -51,7 +54,7 @@ class Kids extends StatelessWidget {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadiusGeometry.circular(10),
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
                                 backgroundColor: Colors.white,
                                 foregroundColor: Colors.black,
@@ -72,19 +75,19 @@ class Kids extends StatelessWidget {
           SizedBox(width: 20),
           GestureDetector(
               onTap: () {
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Downloads(),));
               },
               child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
           SizedBox(width: 20),
           GestureDetector(
               onTap: () {
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Search(),));
               },
               child: Icon(Icons.search, color: Colors.white, size: 25)),
           SizedBox(width: 20),
           GestureDetector(
               onTap: () {
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Notification1(),));
               },
               child: FaIcon(FontAwesomeIcons.bell, color: Colors.white)),
           SizedBox(width: 20),

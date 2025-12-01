@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:netflix/adhi/anetflix.dart';
+import 'package:netflix/downloads.dart';
 import 'package:netflix/kid/knetflix.dart';
 import 'package:netflix/netflixProfile.dart';
+import 'package:netflix/notification.dart';
+import 'package:netflix/search.dart';
 import 'package:netflix/sreeya/snetflix.dart';
 
 class Amy extends StatelessWidget {
@@ -11,7 +14,7 @@ class Amy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: Text(
           "My Netflix",
@@ -23,182 +26,49 @@ class Amy extends StatelessWidget {
         ),
         actions: [
           GestureDetector(
-              onTap: () {
-                showBottomSheet(
-                  context: context,
-                  backgroundColor: Colors.black,
-                  builder: (context) {
-                    return Container(
-                      height: 550,
-                      width: double.infinity,
-                      child: Column(
-                        children: [
-                          SizedBox(height: 20),
-                          Image(image: AssetImage("assets/comp.png")),
-                          Text(
-                            "No Devices Found",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
-                            style: TextStyle(color: Colors.grey),
-                          ),SizedBox(height: 20,),SizedBox(
-                            height: 45,
-                            width: 250,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadiusGeometry.circular(10),
-                                ),
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                              ),
-                              child: Text(
-                                "Find Something to Watch",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              },
-              child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white)),
-          SizedBox(width: 20),
-          GestureDetector(
-              onTap: () {
-
-              },
-              child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
-          SizedBox(width: 20),
-          GestureDetector(
-              onTap: () {
-
-              },
-              child: Icon(Icons.menu, color: Colors.white, size: 25)),
-          SizedBox(width: 20),
-        ],
-      ),
-      backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            GestureDetector(onTap: () {
+            onTap: () {
               showBottomSheet(
                 context: context,
                 backgroundColor: Colors.black,
                 builder: (context) {
-                  return Container(height: 250,
+                  return Container(
+                    height: 550,
+                    width: double.infinity,
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 200,top: 20),
-                          child: Text("Switch Profiles", style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),),
-                        ),SizedBox(height: 15,),
-                        Row(
-                          children: [SizedBox(width: 30,),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => SNetflix(),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                height: 100,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    20,
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      "assets/sreeya.webp",
-                                    ),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
+                        SizedBox(height: 20),
+                        Image(image: AssetImage("assets/comp.png")),
+                        Text(
+                          "No Devices Found",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
+                          height: 45,
+                          width: 250,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
                               ),
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
                             ),
-
-                            SizedBox(width: 40),
-
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ANetflix(),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                height: 100,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    20,
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      "assets/adhi.jpg",
-                                    ),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
+                            child: Text(
+                              "Find Something to Watch",
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-
-                            SizedBox(width: 40),
-
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => KNetflix(),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                height: 100,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    20,
-                                  ),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      "assets/kid.avif",
-                                    ),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),SizedBox(height: 10,),Row(
-                          children: [
-                            SizedBox(width: 60),
-                            Text("sreeya", style: TextStyle(color: Colors.white)),
-                            SizedBox(width: 100),
-                            Text("Adhi", style: TextStyle(color: Colors.white)),
-                            SizedBox(width: 110),
-                            Text("Kids", style: TextStyle(color: Colors.white)),
-                          ],
+                          ),
                         ),
                       ],
                     ),
@@ -206,6 +76,152 @@ class Amy extends StatelessWidget {
                 },
               );
             },
+            child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          ),
+          SizedBox(width: 20),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Search()),
+              );
+            },
+            child: FaIcon(FontAwesomeIcons.search, color: Colors.white),
+          ),
+          SizedBox(width: 20),
+          GestureDetector(
+            onTap: () {},
+            child: Icon(Icons.menu, color: Colors.white, size: 25),
+          ),
+          SizedBox(width: 20),
+        ],
+      ),
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                showBottomSheet(
+                  context: context,
+                  backgroundColor: Colors.black,
+                  builder: (context) {
+                    return Container(
+                      height: 250,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 200, top: 20),
+                            child: Text(
+                              "Switch Profiles",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                          Row(
+                            children: [
+                              SizedBox(width: 30),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SNetflix(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: AssetImage("assets/sreeya.webp"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              SizedBox(width: 40),
+
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ANetflix(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: AssetImage("assets/adhi.jpg"),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              SizedBox(width: 40),
+
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => KNetflix(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: AssetImage("assets/kid.avif"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              SizedBox(width: 60),
+                              Text(
+                                "sreeya",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 100),
+                              Text(
+                                "Adhi",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 110),
+                              Text(
+                                "Kids",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
               child: Container(
                 height: 100,
                 width: 100,
@@ -227,18 +243,28 @@ class Amy extends StatelessWidget {
                         context: context,
                         backgroundColor: Colors.black,
                         builder: (context) {
-                          return Container(height: 250,
+                          return Container(
+                            height: 250,
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 200,top: 20),
-                                  child: Text("Switch Profiles", style: TextStyle(
+                                  padding: const EdgeInsets.only(
+                                    right: 200,
+                                    top: 20,
+                                  ),
+                                  child: Text(
+                                    "Switch Profiles",
+                                    style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 25,
-                                      fontWeight: FontWeight.bold),),
-                                ),SizedBox(height: 15,),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 15),
                                 Row(
-                                  children: [SizedBox(width: 30,),
+                                  children: [
+                                    SizedBox(width: 30),
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.pushReplacement(
@@ -321,14 +347,25 @@ class Amy extends StatelessWidget {
                                       ),
                                     ),
                                   ],
-                                ),SizedBox(height: 10,),Row(
+                                ),
+                                SizedBox(height: 10),
+                                Row(
                                   children: [
                                     SizedBox(width: 60),
-                                    Text("sreeya", style: TextStyle(color: Colors.white)),
+                                    Text(
+                                      "sreeya",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                     SizedBox(width: 100),
-                                    Text("Adhi", style: TextStyle(color: Colors.white)),
+                                    Text(
+                                      "Adhi",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                     SizedBox(width: 110),
-                                    Text("Kids", style: TextStyle(color: Colors.white)),
+                                    Text(
+                                      "Kids",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -351,125 +388,141 @@ class Amy extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            Container(
-              height: 330,
-              width: 400,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white30),
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white10,
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15, left: 15),
-                    child: Row(
-                      children: [
-                        FaIcon(FontAwesomeIcons.bell, color: Colors.white),
-                        SizedBox(width: 25),
-                        Text(
-                          "Notification",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                        SizedBox(width: 180),
-                        Icon(Icons.arrow_forward_ios, color: Colors.white),
-                      ],
-                    ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Notification1()),
+                );
+              },
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Downloads()),
+                  );
+                },
+                child: Container(
+                  height: 330,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white30),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white10,
                   ),
-                  SizedBox(height: 20),
-                  Row(
+                  child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 30, top: 10),
-                        child: Container(
-                          height: 100,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("assets/X.avif"),
-                              fit: BoxFit.fill,
-                            ),
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Column(
-                        children: [
-                          Text(
-                            "Suggestions for what, \nto watch",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Browse your recommen-\ndations",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            "15 nov                              ",
-                            style: TextStyle(color: Colors.white30),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 30, top: 10),
-                        child: Container(
-                          height: 100,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("assets/W.webp"),
-                              fit: BoxFit.fill,
-                            ),
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 80),
-                            child: Text(
-                              "New arrival",
+                        padding: const EdgeInsets.only(top: 15, left: 15),
+                        child: Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.bell, color: Colors.white),
+                            SizedBox(width: 25),
+                            Text(
+                              "Notification",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15,
                                 fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            SizedBox(width: 180),
+                            Icon(Icons.arrow_forward_ios, color: Colors.white),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, top: 10),
+                            child: Container(
+                              height: 100,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/X.avif"),
+                                  fit: BoxFit.fill,
+                                ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
                           ),
+                          SizedBox(width: 10),
+                          Column(
+                            children: [
+                              Text(
+                                "Suggestions for what, \nto watch",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "Browse your recommen-\ndations",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                "15 nov                              ",
+                                style: TextStyle(color: Colors.white30),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 45),
-                            child: Text(
-                              "Bison Kaalmaadan",
-                              style: TextStyle(color: Colors.white),
+                            padding: const EdgeInsets.only(left: 30, top: 10),
+                            child: Container(
+                              height: 100,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/W.webp"),
+                                  fit: BoxFit.fill,
+                                ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                             ),
                           ),
-                          Text(
-                            "22 nov                             ",
-                            style: TextStyle(color: Colors.white30),
+                          SizedBox(width: 10),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(right: 80),
+                                child: Text(
+                                  "New arrival",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 45),
+                                child: Text(
+                                  "Bison Kaalmaadan",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              Text(
+                                "22 nov                             ",
+                                style: TextStyle(color: Colors.white30),
+                              ),
+                            ],
                           ),
                         ],
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
             ),
             SizedBox(height: 10),
@@ -497,7 +550,7 @@ class Amy extends StatelessWidget {
                             fontSize: 20,
                           ),
                         ),
-                        SizedBox(width: 180),
+                        SizedBox(width: 200),
                         Icon(Icons.arrow_forward_ios, color: Colors.white),
                       ],
                     ),

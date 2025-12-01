@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/downloads.dart';
+import 'package:netflix/search.dart';
 
 class KNew extends StatelessWidget {
   const KNew({super.key});
@@ -20,71 +22,78 @@ class KNew extends StatelessWidget {
           ),
         ),
         actions: [
-          GestureDetector(onTap: () {
-            showBottomSheet(
-              context: context,
-              backgroundColor: Colors.black,
-              builder: (context) {
-                return Container(
-                  height: 550,
-                  width: double.infinity,
-                  child: Column(
-                    children: [
-                      SizedBox(height: 20),
-                      Image(image: AssetImage("assets/comp.png")),
-                      Text(
-                        "No Devices Found",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
+          GestureDetector(
+            onTap: () {
+              showBottomSheet(
+                context: context,
+                backgroundColor: Colors.black,
+                builder: (context) {
+                  return Container(
+                    height: 550,
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        SizedBox(height: 20),
+                        Image(image: AssetImage("assets/comp.png")),
+                        Text(
+                          "No Devices Found",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
-                        style: TextStyle(color: Colors.grey),
-                      ),SizedBox(height: 20,),SizedBox(
-                        height: 45,
-                        width: 250,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadiusGeometry.circular(10),
+                        SizedBox(height: 20),
+                        Text(
+                          "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
+                          height: 45,
+                          width: 250,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
                             ),
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black,
-                          ),
-                          child: Text(
-                            "Find Something to Watch",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            child: Text(
+                              "Find Something to Watch",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-          },
-      child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white)),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+            child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
+            onTap: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Downloads()),
+            );},
+            child: FaIcon(FontAwesomeIcons.download, color: Colors.white),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: Icon(Icons.search, color: Colors.white, size: 25)),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Search(),));
+            },
+            child: Icon(Icons.search, color: Colors.white, size: 25),
+          ),
           SizedBox(width: 20),
         ],
       ),
-      body: SingleChildScrollView(
+      body: SingleChildScrollView(scrollDirection:   Axis.vertical,
         child: Column(
           children: [
             Padding(

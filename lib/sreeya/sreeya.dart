@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:netflix/downloads.dart';
+import 'package:netflix/notification.dart';
+import 'package:netflix/search.dart';
 
 class Sreeya extends StatelessWidget {
   const Sreeya({super.key});
@@ -44,14 +47,16 @@ class Sreeya extends StatelessWidget {
                         Text(
                           "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
                           style: TextStyle(color: Colors.grey),
-                        ),SizedBox(height: 20,),SizedBox(
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
                           height: 45,
                           width: 250,
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadiusGeometry.circular(10),
+                                borderRadius: BorderRadius.circular(10),
                               ),
                               backgroundColor: Colors.white,
                               foregroundColor: Colors.black,
@@ -72,17 +77,24 @@ class Sreeya extends StatelessWidget {
           ),
           SizedBox(width: 20),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Downloads()),
+              );
+            },
             child: FaIcon(FontAwesomeIcons.download, color: Colors.white),
           ),
           SizedBox(width: 20),
           GestureDetector(
-            onTap: () {},
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Search(),));},
             child: Icon(Icons.search, color: Colors.white, size: 25),
           ),
           SizedBox(width: 20),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Notification1(),));
+            },
             child: FaIcon(FontAwesomeIcons.bell, color: Colors.white),
           ),
           SizedBox(width: 20),

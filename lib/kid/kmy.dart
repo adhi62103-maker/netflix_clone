@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:netflix/adhi/anetflix.dart';
+import 'package:netflix/downloads.dart';
 import 'package:netflix/kid/knetflix.dart';
 import 'package:netflix/kid/knew.dart';
 import 'package:netflix/netflixProfile.dart';
+import 'package:netflix/notification.dart';
+import 'package:netflix/search.dart';
 import 'package:netflix/sreeya/snetflix.dart';
 
 class Kmy extends StatelessWidget {
@@ -12,7 +15,7 @@ class Kmy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: Text(
           "My Netflix",
@@ -48,14 +51,16 @@ class Kmy extends StatelessWidget {
                         Text(
                           "Make sure your smart TV, streaming device, and iphone\n   or ipad are all on the same WIFI network. if you need\n             help, please visit our Netflix Help Center",
                           style: TextStyle(color: Colors.grey),
-                        ),SizedBox(height: 20,),SizedBox(
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
                           height: 45,
                           width: 250,
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadiusGeometry.circular(10),
+                                borderRadius: BorderRadius.circular(10),
                               ),
                               backgroundColor: Colors.white,
                               foregroundColor: Colors.black,
@@ -72,14 +77,19 @@ class Kmy extends StatelessWidget {
                 },
               );
             },
-              child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white)),
+            child: FaIcon(FontAwesomeIcons.chromecast, color: Colors.white),
+          ),
           SizedBox(width: 20),
           GestureDetector(
-              onTap: () {
-
-              },
-              child: FaIcon(FontAwesomeIcons.search, color: Colors.white)),
-          SizedBox(width: 20)
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Search()),
+              );
+            },
+            child: FaIcon(FontAwesomeIcons.search, color: Colors.white),
+          ),
+          SizedBox(width: 20),
         ],
       ),
       backgroundColor: Colors.black,
@@ -181,14 +191,25 @@ class Kmy extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          ),SizedBox(height: 10,),Row(
+                          ),
+                          SizedBox(height: 10),
+                          Row(
                             children: [
                               SizedBox(width: 60),
-                              Text("sreeya", style: TextStyle(color: Colors.white)),
+                              Text(
+                                "sreeya",
+                                style: TextStyle(color: Colors.white),
+                              ),
                               SizedBox(width: 100),
-                              Text("Adhi", style: TextStyle(color: Colors.white)),
+                              Text(
+                                "Adhi",
+                                style: TextStyle(color: Colors.white),
+                              ),
                               SizedBox(width: 110),
-                              Text("Kids", style: TextStyle(color: Colors.white)),
+                              Text(
+                                "Kids",
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ],
                           ),
                         ],
@@ -322,14 +343,25 @@ class Kmy extends StatelessWidget {
                                       ),
                                     ),
                                   ],
-                                ),SizedBox(height: 10,),Row(
+                                ),
+                                SizedBox(height: 10),
+                                Row(
                                   children: [
                                     SizedBox(width: 60),
-                                    Text("sreeya", style: TextStyle(color: Colors.white)),
+                                    Text(
+                                      "sreeya",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                     SizedBox(width: 100),
-                                    Text("Adhi", style: TextStyle(color: Colors.white)),
+                                    Text(
+                                      "Adhi",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                     SizedBox(width: 110),
-                                    Text("Kids", style: TextStyle(color: Colors.white)),
+                                    Text(
+                                      "Kids",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -352,73 +384,92 @@ class Kmy extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            Container(
-              height: 60,
-              width: 400,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white30),
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white10,
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15, left: 15),
-                    child: Row(
-                      children: [
-                        FaIcon(FontAwesomeIcons.bell, color: Colors.white),
-                        SizedBox(width: 25),
-                        Text(
-                          "Notification",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Notification1()),
+                );
+              },
+              child: Container(
+                height: 60,
+                width: 400,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white30),
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white10,
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, left: 15),
+                      child: Row(
+                        children: [
+                          FaIcon(FontAwesomeIcons.bell, color: Colors.white),
+                          SizedBox(width: 25),
+                          Text(
+                            "Notification",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 180),
-                        Icon(Icons.arrow_forward_ios, color: Colors.white),
-                      ],
+                          SizedBox(width: 180),
+                          Icon(Icons.arrow_forward_ios, color: Colors.white),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 10),
-            Container(
-              width: 400,
-              height: 100,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white30),
-                color: Colors.white10,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15, left: 15),
-                    child: Row(
-                      children: [
-                        FaIcon(FontAwesomeIcons.download, color: Colors.white),
-                        SizedBox(width: 25),
-                        Text(
-                          "Download",
-                          style: TextStyle(
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Downloads()),
+                );
+              },
+              child: Container(
+                width: 400,
+                height: 100,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white30),
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, left: 15),
+                      child: Row(
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.download,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
                           ),
-                        ),
-                        SizedBox(width: 180),
-                        Icon(Icons.arrow_forward_ios, color: Colors.white),
-                      ],
+                          SizedBox(width: 25),
+                          Text(
+                            "Download",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(width: 200),
+                          Icon(Icons.arrow_forward_ios, color: Colors.white),
+                        ],
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Show and movies that you downloaded\nappear here.",
-                    style: TextStyle(color: Colors.white24),
-                  ),
-                ],
+                    Text(
+                      "Show and movies that you downloaded\nappear here.",
+                      style: TextStyle(color: Colors.white24),
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -572,7 +623,7 @@ class Kmy extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusGeometry.circular(10),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.black,
@@ -608,10 +659,15 @@ class Kmy extends StatelessWidget {
               height: 45,
               width: 250,
               child: ElevatedButton(
-                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => KNew(),));},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => KNew()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusGeometry.circular(10),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.black,

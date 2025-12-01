@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:netflix/adhi/anetflix.dart';
+import 'package:netflix/downloads.dart';
 import 'package:netflix/kid/knetflix.dart';
 import 'package:netflix/netflixProfile.dart';
+import 'package:netflix/notification.dart';
+import 'package:netflix/search.dart';
 import 'package:netflix/sreeya/snetflix.dart';
 
 class Smy extends StatelessWidget {
@@ -11,7 +14,7 @@ class Smy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: Text(
           "My Netflix",
@@ -54,7 +57,7 @@ class Smy extends StatelessWidget {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadiusGeometry.circular(10),
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
                                 backgroundColor: Colors.white,
                                 foregroundColor: Colors.black,
@@ -75,9 +78,9 @@ class Smy extends StatelessWidget {
           SizedBox(width: 20),
           GestureDetector(
               onTap: () {
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Search(),));
               },
-              child: FaIcon(FontAwesomeIcons.download, color: Colors.white)),
+              child: FaIcon(FontAwesomeIcons.search, color: Colors.white)),
           SizedBox(width: 20),
           GestureDetector(
               onTap: () {
@@ -351,162 +354,175 @@ class Smy extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            Container(
-              height: 330,
-              width: 400,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white30),
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white10,
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15, left: 15),
-                    child: Row(
-                      children: [
-                        FaIcon(FontAwesomeIcons.bell, color: Colors.white),
-                        SizedBox(width: 25),
-                        Text(
-                          "Notification",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                        SizedBox(width: 180),
-                        Icon(Icons.arrow_forward_ios, color: Colors.white),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 30, top: 10),
-                        child: Container(
-                          height: 100,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("assets/X.avif"),
-                              fit: BoxFit.fill,
-                            ),
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Column(
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Notification1(),));
+              },
+              child: Container(
+                height: 330,
+                width: 400,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white30),
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white10,
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, left: 15),
+                      child: Row(
                         children: [
+                          FaIcon(FontAwesomeIcons.bell, color: Colors.white),
+                          SizedBox(width: 25),
                           Text(
-                            "Suggestions for what, \nto watch",
+                            "Notification",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 15,
                               fontWeight: FontWeight.bold,
+                              fontSize: 20,
                             ),
                           ),
-                          Text(
-                            "Browse your recommen-\ndations",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            "15 nov                              ",
-                            style: TextStyle(color: Colors.white30),
-                          ),
+                          SizedBox(width: 180),
+                          Icon(Icons.arrow_forward_ios, color: Colors.white),
                         ],
                       ),
-                    ],
-                  ),
-
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 30, top: 10),
-                        child: Container(
-                          height: 100,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("assets/W.webp"),
-                              fit: BoxFit.fill,
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30, top: 10),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/X.avif"),
+                                fit: BoxFit.fill,
+                              ),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 10),
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 80),
-                            child: Text(
-                              "New arrival",
+                        SizedBox(width: 10),
+                        Column(
+                          children: [
+                            Text(
+                              "Suggestions for what, \nto watch",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 45),
-                            child: Text(
-                              "Bison Kaalmaadan",
+                            Text(
+                              "Browse your recommen-\ndations",
                               style: TextStyle(color: Colors.white),
                             ),
+                            Text(
+                              "15 nov                              ",
+                              style: TextStyle(color: Colors.white30),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30, top: 10),
+                          child: Container(
+                            height: 100,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/W.webp"),
+                                fit: BoxFit.fill,
+                              ),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                           ),
-                          Text(
-                            "22 nov                             ",
-                            style: TextStyle(color: Colors.white30),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                        ),
+                        SizedBox(width: 10),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 80),
+                              child: Text(
+                                "New arrival",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 45),
+                              child: Text(
+                                "Bison Kaalmaadan",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                            Text(
+                              "22 nov                             ",
+                              style: TextStyle(color: Colors.white30),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 10),
-            Container(
-              width: 400,
-              height: 100,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white30),
-                color: Colors.white10,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15, left: 15),
-                    child: Row(
-                      children: [
-                        FaIcon(FontAwesomeIcons.download, color: Colors.white),
-                        SizedBox(width: 25),
-                        Text(
-                          "Download",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Downloads()),
+                );
+              },
+              child: Container(
+                width: 400,
+                height: 100,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white30),
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, left: 15),
+                      child: Row(
+                        children: [
+                          FaIcon(FontAwesomeIcons.download, color: Colors.white),
+                          SizedBox(width: 25),
+                          Text(
+                            "Download",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 180),
-                        Icon(Icons.arrow_forward_ios, color: Colors.white),
-                      ],
+                          SizedBox(width: 200),
+                          Icon(Icons.arrow_forward_ios, color: Colors.white),
+                        ],
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Show and movies that you downloaded\nappear here.",
-                    style: TextStyle(color: Colors.white24),
-                  ),
-                ],
+                    Text(
+                      "Show and movies that you downloaded\nappear here.",
+                      style: TextStyle(color: Colors.white24),
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
